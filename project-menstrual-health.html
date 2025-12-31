@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="favicon_io/logooo.webp">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Predictive Menstrual Health | Krishna Pradeep</title>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#10653c", 
+              beige: "#f2e9dd",   
+            },
+            fontFamily: {
+              display: ["Playfair Display", "serif"],
+              body: ["DM Sans", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body { background-color: #f2e9dd; color: #10653c; font-family: 'DM Sans', sans-serif; }
+      .font-display { font-family: 'Playfair Display', serif; }
+      
+      /* Scrollbar Logic */
+      ::-webkit-scrollbar { width: 12px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb {
+        background-color: #10653c;
+        border: 4px solid #f2e9dd;
+        border-radius: 99px;
+      }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <nav class="sticky top-0 z-50 w-full bg-beige/90 backdrop-blur-md border-b border-primary/10">
+      <div class="max-w-[1100px] mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="font-display font-bold text-3xl text-primary">Krishna PT</a>
+        <div class="flex items-center space-x-8 text-lg font-bold uppercase tracking-widest text-primary">
+          <a href="projects.html" class="hover:opacity-60">Back to Projects</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="flex-1 w-full max-w-[900px] mx-auto px-6 py-20">
+      
+<header class="mb-16 flex flex-col md:flex-row md:items-start md:justify-between gap-8">
+        
+        <div class="max-w-2xl">
+            <span class="text-xs font-bold tracking-widest uppercase opacity-60 mb-4 block">Health Informatics / Machine Learning</span>
+            <h1 class="font-display text-5xl md:text-6xl mb-8 leading-tight">Predictive Menstrual Health & Nutrition</h1>
+            <p class="text-xl opacity-80 leading-relaxed">
+                A machine learning system achieving 99.39% accuracy in predicting menstrual phases to provide personalized, phase-specific dietary guidance.
+            </p>
+        </div>
+
+        <a 
+          href="Papers\1.Phase Specific Dietary Guidance Modeling of Menstrual Phases.pdf" 
+          download
+          class="shrink-0 bg-primary text-beige px-8 py-4 rounded-lg font-bold text-sm uppercase tracking-widest hover:bg-primary/90 transition-all duration-300 transform hover:-translate-y-1 shadow-lg flex items-center gap-2 h-fit mt-4 md:mt-0"
+        >
+            <span class="material-symbols-outlined"></span>
+            Download Paper
+        </a>
+ 
+      </header>
+
+<div class="w-full max-w-2xl mx-auto aspect-square bg-primary/10 rounded-lg overflow-hidden border border-primary/20 mb-16 relative group">
+        <img 
+          src="Images/Menstrual_Project_IMG.png" 
+          class="w-full h-full object-cover transition-all duration-700 hover:scale-105"
+          alt="Dietary recommendations for menstrual phases"
+        >
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+        
+        <aside class="md:col-span-4 space-y-8">
+            
+            <div class="border-t border-primary/20 pt-4">
+                <h4 class="font-bold mb-2">The Team</h4>
+                <ul class="opacity-70 space-y-1 text-m">
+                    <li>Krishna Pradeep T.</li>
+                    <li>Bhavaraju Venkatalakshmi Anagha</li>
+                    <li>Vagisha Prasad</li>
+                    <li>Shambhavi Singh</li>
+                    <li class="pt-2 italic opacity-80">Mentor:</li>
+                    <li>Dr. S. Lalitha</li>
+                </ul>
+            </div>
+
+            <div class="border-t border-primary/20 pt-4">
+                <h4 class="font-bold mb-2">Focus</h4>
+                <p class="opacity-70">Healthcare & AI</p>
+            </div>
+            
+            <div class="border-t border-primary/20 pt-4">
+                <h4 class="font-bold mb-2">Tech Stack</h4>
+                <ul class="opacity-70 space-y-1">
+                    <li>Python & Pandas</li>
+                    <li>XGBoost Classifier</li>
+                    <li>SMOTE (Oversampling)</li>
+                    <li>Grid Search CV</li>
+                </ul>
+            </div>
+            
+            <div class="border-t border-primary/20 pt-4">
+                <h4 class="font-bold mb-2">Key Concepts</h4>
+                <ul class="opacity-70 space-y-1">
+                    <li>Class Imbalance Handling</li>
+                    <li>Predictive Modeling</li>
+                    <li>Precision Nutrition</li>
+                </ul>
+            </div>
+        </aside>
+
+        <article class="md:col-span-8 prose prose-lg prose-headings:font-display prose-headings:text-primary prose-p:text-primary prose-li:text-primary prose-strong:text-primary marker:text-primary">
+            
+            <h3>The Problem</h3>
+            <p>
+                Nutritional needs for women fluctuate significantly depending on their current menstrual phase (Menstrual, Follicular, Ovulatory, or Luteal). However, most existing health apps only track cycle dates without offering actionable, phase-specific health advice.
+            </p>
+            <p>
+                A major technical challenge in modeling this data is the <strong>Class Imbalance</strong> problem: The "Ovulation" phase is very short compared to the Luteal or Follicular phases, leading standard AI models to frequently misclassify or ignore it.
+            </p>
+
+            <h3>Our Approach</h3>
+            <p>
+                We developed a robust machine learning pipeline utilizing the <strong>XGBoost Algorithm</strong> to classify user data into specific cycle phases. To tackle the data imbalance, we implemented <strong>SMOTE (Synthetic Minority Over-sampling Technique)</strong>, which generates synthetic data points for the underrepresented Ovulation phase.
+            </p>
+            
+            <ul>
+                <li><strong>Data Processing:</strong> Utilized the Ogino method for ground-truth phase calculation and cleaned outliers using statistical visualization.</li>
+                <li><strong>Model Training:</strong> Applied Grid Search for hyperparameter tuning, optimizing the XGBoost model to handle complex, non-linear relationships in health data.</li>
+                <li><strong>Integration:</strong> Built a GUI that takes user inputs (Cycle Length, Menses Score) and outputs a tailored diet plan (e.g., recommending antioxidants during ovulation or iron-rich foods during menstruation).</li>
+            </ul>
+
+            <h3>Impact & Results</h3>
+            <p>
+                The final model achieved an impressive <strong>99.39% accuracy</strong>, significantly outperforming baseline models (which hovered around 97%).
+            </p>
+            <p>
+                <strong>Why this matters:</strong>
+            </p>
+            <ul>
+                <li><strong>Holistic Well-being:</strong> By accurately predicting the cycle phase, we provide women with precise knowledge on what to eat to mitigate symptoms like fatigue, cramps, or mood swings.</li>
+                <li><strong>Reliability:</strong> The use of SMOTE ensured that the critical "Ovulation" phase—often the most important for fertility tracking—was predicted with high precision (Recall improved to 1.00).</li>
+                <li><strong>Personalization:</strong> The system adapts recommendations based on dietary preferences (Vegan, Vegetarian, Non-Veg), making healthcare accessible and actionable.</li>
+            </ul>
+
+        </article>
+      </div>
+
+    </main>
+
+    <footer class="border-t border-primary/10 py-12 text-center">
+        <a href="index.html" class="text-sm font-bold uppercase tracking-widest hover:opacity-60">← Back to Home</a>
+    </footer>
+
+</body>
+</html>

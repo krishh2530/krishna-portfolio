@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="favicon_io/logooo.webp">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI-Native PHY | Krishna Pradeep</title>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#10653c", 
+              beige: "#f2e9dd",   
+            },
+            fontFamily: {
+              display: ["Playfair Display", "serif"],
+              body: ["DM Sans", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body { background-color: #f2e9dd; color: #10653c; font-family: 'DM Sans', sans-serif; }
+      .font-display { font-family: 'Playfair Display', serif; }
+      
+      /* Scrollbar Logic */
+      ::-webkit-scrollbar { width: 12px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { 
+        background-color: #10653c;
+        border: 4px solid #f2e9dd;
+        border-radius: 99px;
+      }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <nav class="sticky top-0 z-50 w-full bg-beige/90 backdrop-blur-md border-b border-primary/10">
+      <div class="max-w-[1100px] mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="font-display font-bold text-3xl text-primary">Krishna PT</a>
+        <div class="flex items-center space-x-8 text-lg font-bold uppercase tracking-widest text-primary">
+          <a href="projects.html" class="hover:opacity-60">Back to Projects</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="flex-1 w-full max-w-[900px] mx-auto px-6 py-20">
+      
+      <header class="mb-16">
+        <span class="text-xs font-bold tracking-widest uppercase opacity-60 mb-4 block">6G Research / Deep Learning / Wireless Comms</span>
+        <h1 class="font-display text-5xl md:text-6xl mb-8 leading-tight">AI-Native PHY & Neural Receivers</h1>
+        <p class="text-xl opacity-80 leading-relaxed max-w-2xl">
+            Replacing traditional block-based wireless receivers with end-to-end learnable neural networks using the NVIDIA Sionna framework.
+        </p>
+      </header>
+
+<div class="w-full aspect-video bg-primary/10 rounded-lg overflow-hidden border border-primary/20 mb-16 relative">
+  <img 
+    src="Images/Project_neural_phy_IMG.png" 
+    class="w-full h-full object-cover transition-all duration-700"
+    alt="AI Native Portfolio Image"
+  >
+</div>
+
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+        
+        <aside class="md:col-span-4 space-y-8">
+            
+            <div class="border-t border-primary/20 pt-4">
+                <h4 class="font-bold mb-2">The Team</h4>
+                <ul class="opacity-70 space-y-1 text-m">
+                    <li>Krishna Pradeep T.</li>
+                    <li>Lasyapriya Bharadwaj K.</li>
+                    <li class="pt-2 italic opacity-80">Mentors:</li>
+                    <li>Dr. Satya Kumar V. (Samsung)</li>
+                    <li>Dr. Navin Kumar (Amrita)</li>
+                </ul>
+            </div>
+
+            <div class="border-t border-primary/20 pt-4">
+                <h4 class="font-bold mb-2">Focus</h4>
+                <p class="opacity-70">Research & Simulation</p>
+            </div>
+            
+            <div class="border-t border-primary/20 pt-4">
+                <h4 class="font-bold mb-2">Frameworks</h4>
+                <ul class="opacity-70 space-y-1">
+                    <li>NVIDIA Sionna</li>
+                    <li>TensorFlow / Keras</li>
+                    <li>Python (NumPy, Matplotlib)</li>
+                </ul>
+            </div>
+            
+            <div class="border-t border-primary/20 pt-4">
+                <h4 class="font-bold mb-2">Key Concepts</h4>
+                <ul class="opacity-70 space-y-1">
+                    <li>End-to-End Learning</li>
+                    <li>Multi-User MIMO</li>
+                    <li>OFDM & 5G NR</li>
+                </ul>
+            </div>
+        </aside>
+
+        <article class="md:col-span-8 prose prose-lg prose-headings:font-display prose-headings:text-primary prose-p:text-primary prose-li:text-primary prose-strong:text-primary marker:text-primary">
+            
+            <h3>The Problem</h3>
+            <p>
+                Traditional 5G communication systems rely on rigid, "hand-crafted" blocks for processing signals (Channel Estimation → Equalization → Demapping → Decoding). Each block is optimized independently, which is inefficient for complex channel environments with high interference.
+            </p>
+            <p>
+                The industry is moving toward <strong>AI-Native PHY</strong>, where the entire receiver chain is replaced by a single Neural Network (Neural Receiver) that learns to jointly optimize detection and estimation directly from data.
+            </p>
+
+            <h3>Current Approach</h3>
+            <p>
+                I am leveraging <strong>NVIDIA’s Sionna framework</strong> to simulate and benchmark these Neural Receivers (NRX). The core architecture involves a GNN (Graph Neural Network) combined with CNN layers to handle Multi-User MIMO scenarios.
+            </p>
+            
+            <ul>
+                <li><strong>Environment Setup:</strong> Configured a custom TensorFlow/Sionna environment to run 5G NR uplink simulations, overcoming hardware limitations by optimizing for CPU execution where necessary.</li>
+                <li><strong>Simulation:</strong> Running Monte Carlo simulations to evaluate Bit Error Rate (BER) vs. Signal-to-Noise Ratio (Eb/No).</li>
+                <li><strong>Robustness Testing:</strong> Evaluating performance across TDL (Tapped Delay Line) channel models for both Single-User and Multi-User interference scenarios.</li>
+            </ul>
+
+            <h3>Research Impact & Goals</h3>
+            <p>
+                This project aims to demonstrate that a <strong>jointly optimized neural receiver</strong> can outperform classical baselines, particularly in non-linear channel conditions.
+            </p>
+            <p>
+                By training an end-to-end autoencoder, we are moving away from mathematically modeled blocks to a system that "learns" the physics of the channel[cite: 1]. This has the potential to:
+            </p>
+            <ul>
+                <li>Significantly reduce Bit Error Rates (BER) in high-interference environments.</li>
+                <li>Generalize better to unseen channel conditions compared to rigid classical algorithms.</li>
+                <li>Pave the way for 6G standards where AI is native to the physical layer design.</li>
+            </ul>
+
+        </article>
+      </div>
+
+    </main>
+
+    <footer class="border-t border-primary/10 py-12 text-center">
+        <a href="index.html" class="text-sm font-bold uppercase tracking-widest hover:opacity-60">← Back to Home</a>
+    </footer>
+
+</body>
+</html>

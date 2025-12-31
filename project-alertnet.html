@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="favicon_io/logooo.webp">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>AlertNet: Blockchain IoV | Krishna Pradeep</title>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#10653c", 
+              beige: "#f2e9dd",   
+            },
+            fontFamily: {
+              display: ["Playfair Display", "serif"],
+              body: ["DM Sans", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body { background-color: #f2e9dd; color: #10653c; font-family: 'DM Sans', sans-serif; }
+      .font-display { font-family: 'Playfair Display', serif; }
+      
+      /* Scrollbar Logic */
+      ::-webkit-scrollbar { width: 12px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb {
+        background-color: #10653c;
+        border: 4px solid #f2e9dd;
+        border-radius: 99px;
+      }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <nav class="sticky top-0 z-50 w-full bg-beige/90 backdrop-blur-md border-b border-primary/10">
+      <div class="max-w-[1200px] mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="font-display font-bold text-3xl text-primary">Krishna PT</a>
+        <div class="flex items-center space-x-8 text-lg font-bold uppercase tracking-widest text-primary">
+          <a href="projects.html" class="hover:opacity-60">Back to Projects</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="flex-1 w-full max-w-[1200px] mx-auto px-6 py-20">
+      
+      <header class="mb-16 flex flex-col md:flex-row md:items-start md:justify-between gap-8">
+        
+        <div class="max-w-4xl">
+            <span class="text-xs font-bold tracking-widest uppercase opacity-60 mb-4 block">Blockchain / IoT / Cloud Computing</span>
+            <h1 class="font-display text-5xl md:text-6xl mb-8 leading-tight">AlertNet: Decentralized IoV Safety System</h1>
+            <p class="text-xl opacity-80 leading-relaxed">
+                A zone-aware, blockchain-backed safety alert system for the Internet of Vehicles (IoV), eliminating single points of failure using AWS and Ethereum Smart Contracts.
+            </p>
+        </div>
+
+        <a 
+          href="Papers/Cloud_Computing_Report.pdf" 
+          download
+          class="md:ml-auto shrink-0 bg-primary text-beige px-8 py-4 rounded-lg font-bold text-sm uppercase tracking-widest hover:bg-primary/90 transition-all duration-300 transform hover:-translate-y-1 shadow-lg flex items-center gap-2 h-fit mt-4 md:mt-0"
+        >
+            <span class="material-symbols-outlined">description</span>
+            Download Report
+        </a>
+      </header>
+
+      <div class="w-full max-w-5xl mx-auto bg-primary/5 rounded-lg overflow-hidden border border-primary/20 mb-16 relative group">
+        <img 
+          src="Images/Project_Cloud_IMG.png" 
+          class="w-full h-auto block transition-all duration-700 hover:scale-105"
+          alt="AlertNet Mobile Interface and Architecture"
+        >
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+        
+        <aside class="md:col-span-4 space-y-8">
+            
+            <div class="border-t border-primary/20 pt-4">
+                <h4 class="font-bold mb-2">The Team</h4>
+                <ul class="opacity-70 space-y-1 text-m">
+                    <li>Krishna P. Tambatkar</li>
+                    <li>Lasyapriya Bharadwaj K.</li>
+                    <li>Shashank R.</li>
+                    <li class="pt-2 italic opacity-80">Mentor:</li>
+                    <li>Dr. Bhavana V.</li>
+                </ul>
+            </div>
+
+            <div class="border-t border-primary/20 pt-4">
+                <h4 class="font-bold mb-2">Links</h4>
+                <a href="https://github.com/Shashank-R87/alertnet" target="_blank" class="flex items-center gap-2 text-primary hover:underline font-medium">
+                    <span class="material-symbols-outlined text-lg">code</span>
+                    View Repository
+                </a>
+            </div>
+
+            <div class="border-t border-primary/20 pt-4">
+                <h4 class="font-bold mb-2">Tech Stack</h4>
+                <ul class="opacity-70 space-y-1">
+                    <li>React Native (Mobile App)</li>
+                    <li>AWS (Lambda, API Gateway, RDS)</li>
+                    <li>Ethereum (Sepolia Testnet)</li>
+                    <li>Solidity (Smart Contracts)</li>
+                </ul>
+            </div>
+            
+            <div class="border-t border-primary/20 pt-4">
+                <h4 class="font-bold mb-2">Key Concepts</h4>
+                <ul class="opacity-70 space-y-1">
+                    <li>Geofenced Smart Contracts</li>
+                    <li>Decentralized Ledgering</li>
+                    <li>Serverless Architecture</li>
+                    <li>Identity Management (OAuth 2.0)</li>
+                </ul>
+            </div>
+        </aside>
+
+        <article class="md:col-span-8 prose prose-lg prose-headings:font-display prose-headings:text-primary prose-p:text-primary prose-li:text-primary prose-strong:text-primary marker:text-primary">
+            
+            <h3>The Problem</h3>
+            <p>
+                Safety in the Internet of Vehicles (IoV) relies on the rapid exchange of hazard information. However, traditional systems often suffer from single points of failure (centralized servers) and high latency. Furthermore, existing blockchain solutions frequently lack "zone awareness," meaning users are flooded with irrelevant alerts from distant locations, or suffer from high transaction costs due to inefficient ledgering.
+            </p>
+
+            <h3>The Solution: AlertNet</h3>
+            <p>
+                AlertNet is a three-layer decentralized system designed to ensure drivers receive tamper-evident, location-specific alerts in real-time. By coupling cloud geofencing with per-zone smart contracts, we deliver trusted data without the scalability bottlenecks of a single global ledger.
+            </p>
+            
+            <div class="my-8 p-6 bg-white/50 rounded-xl border border-primary/10">
+                <h4 class="text-lg font-bold mb-4 font-display">System Architecture</h4>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li><strong>Perception Layer (Mobile App):</strong> A React Native application that locally computes zone inclusion using the Haversine formula. It handles secure Google OAuth 2.0 sign-in and captures live GPS data to display relevant alerts.</li>
+                    <li><strong>Network Layer (AWS Cloud):</strong> A serverless bridge using AWS API Gateway and Lambda functions. The <code>/findZone</code> endpoint queries a PostgreSQL (RDS) database to map user coordinates to specific smart contracts, ensuring the app only listens to relevant data.</li>
+                    <li><strong>Application Layer (Blockchain):</strong> We deployed separate Smart Contracts for each geofenced zone on the Ethereum Sepolia Testnet. This architecture ensures that an alert for "Zone A" is broadcast <em>only</em> to drivers currently in "Zone A," significantly reducing network noise.</li>
+                </ul>
+            </div>
+
+            <h3>Impact & Results</h3>
+            <p>
+                We deployed a prototype covering seven urban zones and achieved significant performance metrics that validate the system's viability for real-world use:
+            </p>
+            <ul>
+                <li><strong>Low Latency:</strong> The system achieved an average end-to-end confirmation time of <strong>9.4 seconds</strong> (from app → cloud → chain → app), suitable for near-real-time safety warnings.</li>
+                <li><strong>Cost Efficiency:</strong> By using an "event-only" ledgering strategy (emitting events rather than storing massive data on-chain), we minimized gas costs to approximately <strong>0.00000003 ETH</strong> per alert.</li>
+                <li><strong>Reliability:</strong> The system maintained a <strong>96% success rate</strong> for alert posting even under intermittent network conditions, proving the resilience of the decentralized architecture.</li>
+            </ul>
+
+        </article>
+      </div>
+
+    </main>
+
+    <footer class="border-t border-primary/10 py-12 text-center">
+        <a href="index.html" class="text-sm font-bold uppercase tracking-widest hover:opacity-60">← Back to Home</a>
+    </footer>
+
+</body>
+</html>

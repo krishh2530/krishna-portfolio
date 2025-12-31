@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon_io/logooo.webp">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Contact | Krishna Pradeep</title>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;500&family=Manrope:wght@400;500;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#10653c", // Dark Forest Green
+                        beige: "#f2e9dd",   // Light Beige
+                    },
+                    fontFamily: {
+                        display: ["Playfair Display", "serif"],
+                        body: ["DM Sans", "sans-serif"],
+                        sans: ["DM Sans", "sans-serif"],
+                    },
+                },
+            },
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #f2e9dd;
+            color: #10653c;
+        }
+        .link-hover-effect {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .link-hover-effect::after {
+            content: '→';
+            position: absolute;
+            opacity: 0;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+            transform: translateX(-10px);
+        }
+        .link-hover-effect:hover {
+            font-style: italic;
+            padding-right: 20px; 
+        }
+        .link-hover-effect:hover::after {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+
+<body class="bg-beige text-primary min-h-screen flex flex-col font-sans selection:bg-primary selection:text-beige overflow-hidden">
+    
+    <nav class="sticky top-0 z-50 w-full bg-beige/90 backdrop-blur-md border-b border-primary/10">
+      <div class="max-w-[1100px] mx-auto px-6 py-4 flex justify-between items-center">
+        
+        <a href="index.html" class="flex items-center gap-3 group">
+          <div class="h-10 w-10 rounded-full overflow-hidden border border-primary">
+            <img src="Images/About_Me_IMG.png" alt="Profile" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500">
+          </div>
+          <span class="font-display font-bold text-3xl tracking-tight text-primary">Krishna PT</span>
+        </a>
+
+        <div class="hidden md:flex items-center gap-8 text-lg font-bold uppercase tracking-widest text-primary">
+          
+          <a href="index.html" class="relative group py-2">
+            Home
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+          </a>
+
+          <a href="projects.html" class="relative group py-2">
+            Projects
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+          </a>
+
+          <a href="about.html" class="relative group py-2">
+            About Me
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+          </a>
+
+          <a href="contact.html" class="relative group py-2">
+            Contact
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+          </a>
+
+        </div>
+      </div>
+    </nav>
+
+    <main class="flex-grow flex items-center justify-center relative w-full h-full px-4">
+        
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full overflow-hidden pointer-events-none opacity-[0.03] select-none flex items-center justify-center">
+            <span class="font-display text-[40vw] leading-none whitespace-nowrap">Hello</span>
+        </div>
+
+        <div class="max-w-4xl w-full flex flex-col items-center justify-center text-center z-10 gap-12 md:gap-16">
+            <div class="space-y-4">
+                <p class="text-xs md:text-sm uppercase tracking-[0.3em] font-sans opacity-70">Open for opportunities</p>
+                <h1 class="font-display text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-medium leading-[0.9] tracking-tight text-primary">
+                    Connect<br/>
+                    <span class="italic">with me?</span>
+                </h1>
+            </div>
+
+            <nav class="flex flex-col items-center gap-6 md:gap-8 mt-4">
+                
+                <a class="group flex items-center justify-center text-xl md:text-2xl lg:text-3xl link-hover-effect" href="https://www.linkedin.com/in/krishnatambatkar" target="_blank">
+                    <span class="font-sans font-light tracking-wide">LinkedIn</span>
+                </a>
+                
+                <a class="group flex items-center justify-center text-xl md:text-2xl lg:text-3xl link-hover-effect" href="mailto:hello@example.com">
+                    <span class="font-sans font-light tracking-wide">Email</span>
+                </a>
+                
+                <a class="group flex items-center justify-center text-xl md:text-2xl lg:text-3xl link-hover-effect" href="https://www.instagram.com/krizzz__25/" target="_blank">
+                    <span class="font-sans font-light tracking-wide">Instagram</span>
+                </a>
+                
+                <a class="group flex items-center justify-center text-xl md:text-2xl lg:text-3xl link-hover-effect" href="Krishna_P_Tambatkar_CV.pdf" download>
+                    <span class="font-sans font-light tracking-wide">Resume</span>
+                </a>
+            </nav>
+        </div>
+    </main>
+
+    <footer class="fixed bottom-0 left-0 w-full p-8 md:p-12 z-50 flex justify-between items-end pointer-events-none">
+        <div class="hidden md:block pointer-events-auto">
+            <p class="text-xs font-sans opacity-60 max-w-[200px] leading-relaxed">
+                Based in India<br/>
+                Software Engineer<br/>
+                EST 2025
+            </p>
+        </div>
+        <div class="w-full md:w-auto text-center md:text-right pointer-events-auto">
+            <p class="text-xs font-sans opacity-50">© 2025 Krishna Pradeep. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

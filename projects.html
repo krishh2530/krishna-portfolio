@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="favicon_io/logooo.webp">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Projects Gallery - Krishna Pradeep</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#10653c",
+                        "background-light": "#f2e9dd",
+                        "background-dark": "#122019",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "serif": ["Playfair Display", "serif"],
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style>
+        .glass-nav {
+            background: rgba(242, 233, 221, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        
+        /* Card Hover Effects - Zoom Only, No Grayscale */
+        .card-hover-group:hover .card-image {
+            transform: scale(1.05);
+        }
+        
+        .card-image {
+            /* Removed grayscale filter */
+            transition: transform 0.7s ease-in-out; /* Slower, smoother zoom */
+        }
+    </style>
+</head>
+<body class="bg-background-light text-primary font-display relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden selection:bg-primary selection:text-white">
+
+    <nav class="glass-nav fixed top-0 left-0 right-0 z-50 w-full border-b border-primary/10 transition-all duration-300">
+        <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-12">
+            <div class="flex items-center gap-4">
+                <a class="flex items-center gap-2 group" href="index.html">
+                    <div class="h-10 w-10 rounded-full overflow-hidden border border-primary">
+  <img
+    src="Images/About_Me_IMG.png"
+    alt="Profile"
+    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
+  >
+</div>
+                    <span class="font-serif text-3xl font-bold tracking-tight text-primary">Krishna PT</span>
+                </a>
+            </div>
+           <div class="hidden md:flex items-center gap-8 text-lg font-bold uppercase tracking-widest text-primary">
+                
+                <a href="index.html" class="relative group py-2">
+                    Home
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+
+                <a href="projects.html" class="relative group py-2">
+                    Projects
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-primary transition-all duration-300"></span>
+                </a>
+
+                <a href="about.html" class="relative group py-2">
+                    About Me
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+
+                <a href="contact.html" class="relative group py-2">
+                    Contact
+                    <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+                </a>
+
+            </div>
+            <button class="md:hidden text-primary p-2">
+                <span class="material-symbols-outlined text-3xl">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <section class="relative flex h-screen min-h-[600px] flex-col items-center justify-center px-4 pt-20">
+        <div class="absolute inset-0 opacity-5 pointer-events-none" style="background-image: radial-gradient(#10653c 1px, transparent 1px); background-size: 32px 32px;"></div>
+        
+        <div class="layout-content-container z-10 flex max-w-[1000px] flex-col items-center justify-center gap-8 text-center animate-fade-in-up">
+            <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl font-medium leading-tight tracking-tight text-primary">
+                Welcome to my<br/>
+                <span class="italic">Innovative Workspace</span>
+            </h1>
+            <p class="max-w-2xl text-lg md:text-xl font-light text-primary/80">
+                Exploring the intersection of artificial intelligence, connectivity, and sustainable engineering.
+            </p>
+        </div>
+        
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+            <a class="flex flex-col items-center gap-2 text-primary hover:text-primary/80 transition-colors" href="#projects-grid">
+                <span class="text-xs font-bold uppercase tracking-widest">Scroll Down</span>
+                <span class="material-symbols-outlined text-4xl">keyboard_arrow_down</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="relative z-10 w-full px-6 py-20 lg:px-12" id="projects-grid">
+        <div class="mx-auto max-w-6xl">
+            
+            <div class="mb-12 flex items-baseline justify-between border-b border-primary/20 pb-4">
+                <h2 class="font-serif text-3xl md:text-4xl font-bold text-primary">Curated Projects</h2>
+                <span class="text-sm font-medium text-primary/60">2023 — Present</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+                
+                <a class="card-hover-group group relative flex flex-col gap-4 rounded-3xl bg-white/60 p-4 transition-all duration-500 hover:-translate-y-2 hover:bg-white/80 hover:shadow-xl hover:shadow-primary/10 border border-primary/5 hover:border-primary/10" href="project-neural-phy.html">
+                    <div class="aspect-video w-full overflow-hidden rounded-2xl bg-primary/10 relative shadow-inner">
+                        <div class="card-image h-full w-full bg-cover bg-center" style="background-image: url('Images/Portfolio_Ai_Native_IMG.png');"></div>
+                        <div class="absolute top-3 right-3 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-primary shadow-sm backdrop-blur-sm">2026</div>
+                    </div>
+                    <div class="flex flex-col gap-2 px-1">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary">6G</span>
+                            <span class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary">Deep Learning</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold leading-tight text-primary">AI-Native Neural Receiver</h3>
+                        <p class="text-sm leading-relaxed text-primary/80">
+                            Replacing traditional block-based wireless receivers with end-to-end learnable neural networks using NVIDIA Sionna.
+                        </p>
+                    </div>
+                    <div class="mt-auto flex justify-end pt-2">
+                        <span class="material-symbols-outlined opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-primary">arrow_forward</span>
+                    </div>
+                </a>
+
+                <a class="card-hover-group group relative flex flex-col gap-4 rounded-3xl bg-white/60 p-4 transition-all duration-500 hover:-translate-y-2 hover:bg-white/80 hover:shadow-xl hover:shadow-primary/10 border border-primary/5 hover:border-primary/10" href="project-alertnet.html">
+                    <div class="aspect-video w-full overflow-hidden rounded-2xl bg-primary/10 relative shadow-inner">
+                        <div class="card-image h-full w-full bg-cover bg-center" style="background-image: url('Images/Cloud_IMG.png');"></div>
+                        <div class="absolute top-3 right-3 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-primary shadow-sm backdrop-blur-sm">2025</div>
+                    </div>
+                    <div class="flex flex-col gap-2 px-1">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary">Blockchain</span>
+                            <span class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary">IoV</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold leading-tight text-primary">AlertNet: Decentralized IoV</h3>
+                        <p class="text-sm leading-relaxed text-primary/80">
+                            A zone-aware, blockchain-backed safety alert system for vehicles, eliminating single points of failure using AWS & Ethereum.
+                        </p>
+                    </div>
+                    <div class="mt-auto flex justify-end pt-2">
+                        <span class="material-symbols-outlined opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-primary">arrow_forward</span>
+                    </div>
+                </a>
+
+                <a class="card-hover-group group relative flex flex-col gap-4 rounded-3xl bg-white/60 p-4 transition-all duration-500 hover:-translate-y-2 hover:bg-white/80 hover:shadow-xl hover:shadow-primary/10 border border-primary/5 hover:border-primary/10" href="project-menstrual-health.html">
+                    <div class="aspect-video w-full overflow-hidden rounded-2xl bg-primary/10 relative shadow-inner">
+                        <div class="card-image h-full w-full bg-cover bg-center" style="background-image: url('Images/Phase_Prediction_IMG.png');"></div>
+                        <div class="absolute top-3 right-3 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-primary shadow-sm backdrop-blur-sm">2024</div>
+                    </div>
+                    <div class="flex flex-col gap-2 px-1">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary">Machine Learning</span>
+                            <span class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary">Healthcare</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold leading-tight text-primary">Predictive Menstrual Health</h3>
+                        <p class="text-sm leading-relaxed text-primary/80">
+                            A machine learning system achieving 99.39% accuracy in predicting phases for personalized dietary guidance.
+                        </p>
+                    </div>
+                    <div class="mt-auto flex justify-end pt-2">
+                        <span class="material-symbols-outlined opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-primary">arrow_forward</span>
+                    </div>
+                </a>
+
+                <a class="card-hover-group group relative flex flex-col gap-4 rounded-3xl bg-white/60 p-4 transition-all duration-500 hover:-translate-y-2 hover:bg-white/80 hover:shadow-xl hover:shadow-primary/10 border border-primary/5 hover:border-primary/10" href="project-lidar.html">
+                    <div class="aspect-video w-full overflow-hidden rounded-2xl bg-primary/10 relative shadow-inner">
+                        <div class="card-image h-full w-full bg-cover bg-center" style="background-image: url('Images/Lidar_IMG.png');"></div>
+                        <div class="absolute top-3 right-3 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-primary shadow-sm backdrop-blur-sm">2025</div>
+                    </div>
+                    <div class="flex flex-col gap-2 px-1">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary">Robotics</span>
+                            <span class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary">Algorithms</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold leading-tight text-primary">Enhancing 3D LiDAR Localization</h3>
+                        <p class="text-sm leading-relaxed text-primary/80">
+                            A robust localization pipeline using Fuzzy Logic and Particle Swarm Optimization to eliminate drift in autonomous navigation.
+                        </p>
+                    </div>
+                    <div class="mt-auto flex justify-end pt-2">
+                        <span class="material-symbols-outlined opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-primary">arrow_forward</span>
+                    </div>
+                </a>
+
+                <a class="card-hover-group group relative flex flex-col gap-4 rounded-3xl bg-white/60 p-4 transition-all duration-500 hover:-translate-y-2 hover:bg-white/80 hover:shadow-xl hover:shadow-primary/10 border border-primary/5 hover:border-primary/10" href="project-speech-translator.html">
+                    <div class="aspect-video w-full overflow-hidden rounded-2xl bg-primary/10 relative shadow-inner">
+                        <div class="card-image h-full w-full bg-cover bg-center" style="background-image: url('Images/Raspberry_IMG.png');"></div>
+                        <div class="absolute top-3 right-3 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-primary shadow-sm backdrop-blur-sm">2024</div>
+                    </div>
+                    <div class="flex flex-col gap-2 px-1">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary">Embedded Systems</span>
+                            <span class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary">NLP</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold leading-tight text-primary">Offline Speech Translator</h3>
+                        <p class="text-sm leading-relaxed text-primary/80">
+                            Portable, bidirectional speech-to-speech translation on Raspberry Pi for low-resource Indian languages.
+                        </p>
+                    </div>
+                    <div class="mt-auto flex justify-end pt-2">
+                        <span class="material-symbols-outlined opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-primary">arrow_forward</span>
+                    </div>
+                </a>
+
+                <a class="card-hover-group group relative flex flex-col gap-4 rounded-3xl bg-white/60 p-4 transition-all duration-500 hover:-translate-y-2 hover:bg-white/80 hover:shadow-xl hover:shadow-primary/10 border border-primary/5 hover:border-primary/10" href="project-deforestation.html">
+                    <div class="aspect-video w-full overflow-hidden rounded-2xl bg-primary/10 relative shadow-inner">
+                        <div class="card-image h-full w-full bg-cover bg-center" style="background-image: url('Images/Deforestation_IMG.png');"></div>
+                        <div class="absolute top-3 right-3 rounded-full bg-white/90 px-3 py-1 text-xs font-bold text-primary shadow-sm backdrop-blur-sm">2025</div>
+                    </div>
+                    <div class="flex flex-col gap-2 px-1">
+                        <div class="flex flex-wrap gap-2">
+                            <span class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary">Sustainability</span>
+                            <span class="inline-flex items-center rounded-full bg-primary/10 px-3 py-1 text-xs font-bold uppercase tracking-wide text-primary">ML</span>
+                        </div>
+                        <h3 class="font-serif text-2xl font-bold leading-tight text-primary">Eco-Optimized Forestry Model</h3>
+                        <p class="text-sm leading-relaxed text-primary/80">
+                            Algorithmic model using satellite imagery and graph theory to balance economic development with ecological preservation.
+                        </p>
+                    </div>
+                    <div class="mt-auto flex justify-end pt-2">
+                        <span class="material-symbols-outlined opacity-0 transition-opacity duration-300 group-hover:opacity-100 text-primary">arrow_forward</span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="mt-auto border-t border-primary/10 bg-background-light py-12">
+        <div class="mx-auto flex max-w-7xl flex-col items-center justify-center gap-8 px-6 text-center">
+            <div class="flex flex-wrap justify-center gap-6">
+                <a class="group flex h-12 w-12 items-center justify-center rounded-full border border-primary/20 bg-transparent text-primary transition-all duration-300 hover:bg-primary hover:text-[#f2e9dd] hover:shadow-lg hover:shadow-primary/20" href="https://www.linkedin.com/in/krishnatambatkar" target="_blank">
+                    <span class="material-symbols-outlined text-[24px]">group</span>
+                </a>
+                <a class="group flex h-12 w-12 items-center justify-center rounded-full border border-primary/20 bg-transparent text-primary transition-all duration-300 hover:bg-primary hover:text-[#f2e9dd] hover:shadow-lg hover:shadow-primary/20" href="https://github.com/krishh2530" target="_blank">
+                    <span class="material-symbols-outlined text-[24px]">code</span>
+                </a>
+                <a class="group flex h-12 w-12 items-center justify-center rounded-full border border-primary/20 bg-transparent text-primary transition-all duration-300 hover:bg-primary hover:text-[#f2e9dd] hover:shadow-lg hover:shadow-primary/20" href="mailto:ktams2530@gmail.com">
+                    <span class="material-symbols-outlined text-[24px]">mail</span>
+                </a>
+            </div>
+            <div class="flex flex-col gap-2">
+                <p class="font-serif text-lg font-medium text-primary">Krishna Pradeep</p>
+                <p class="text-sm text-primary/70">© 2025. Built for Impact.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

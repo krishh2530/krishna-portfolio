@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="favicon_io/logooo.webp">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>LiDAR Localization & PSO | Krishna Pradeep</title>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#10653c", 
+              beige: "#f2e9dd",   
+            },
+            fontFamily: {
+              display: ["Playfair Display", "serif"],
+              body: ["DM Sans", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body { background-color: #f2e9dd; color: #10653c; font-family: 'DM Sans', sans-serif; }
+      .font-display { font-family: 'Playfair Display', serif; }
+      
+      /* Scrollbar Logic */
+      ::-webkit-scrollbar { width: 12px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb {
+        background-color: #10653c;
+        border: 4px solid #f2e9dd;
+        border-radius: 99px;
+      }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <nav class="sticky top-0 z-50 w-full bg-beige/90 backdrop-blur-md border-b border-primary/10">
+      <div class="max-w-[1200px] mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="font-display font-bold text-3xl text-primary">Krishna PT</a>
+        <div class="flex items-center space-x-8 text-m font-bold uppercase tracking-widest text-primary">
+          <a href="projects.html" class="hover:opacity-60">Back to Projects</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="flex-1 w-full max-w-[1200px] mx-auto px-6 py-20">
+      
+      <header class="mb-16 flex flex-col md:flex-row md:items-start md:justify-between gap-8">
+        
+        <div class="max-w-4xl">
+            <span class="text-xs font-bold tracking-widest uppercase opacity-60 mb-4 block">Autonomous Systems / Robotics / Algorithms</span>
+            <h1 class="font-display text-5xl md:text-6xl mb-8 leading-tight">Enhancing 3D LiDAR Localization</h1>
+            <p class="text-xl opacity-80 leading-relaxed">
+                A robust localization pipeline ("Fuzzy-PSO-MCL") that combines Fuzzy Logic ground segmentation with Particle Swarm Optimization to eliminate drift in autonomous vehicle navigation.
+            </p>
+        </div>
+
+        <a 
+          href="Papers/Lidar_Report.pdf" 
+          download
+          class="md:ml-auto shrink-0 bg-primary text-beige px-8 py-4 rounded-lg font-bold text-sm uppercase tracking-widest hover:bg-primary/90 transition-all duration-300 transform hover:-translate-y-1 shadow-lg flex items-center gap-2 h-fit mt-4 md:mt-0"
+        >
+            <span class="material-symbols-outlined">description</span>
+            Download Report
+        </a>
+      </header>
+
+      <div class="w-full max-w-4xl mx-auto bg-primary/5 rounded-lg overflow-hidden border border-primary/20 mb-16 relative group">
+        <img 
+          src="Images/Project_Lidar_IMG.png" 
+          class="w-full h-auto block transition-all duration-700 hover:scale-105"
+          alt="Fuzzy Ground Segmentation Mesh Map"
+        >
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+        
+        <aside class="md:col-span-4 space-y-8">
+            
+            <div class="border-t border-primary/20 pt-4">
+                <h4 class="font-bold mb-2">The Team</h4>
+                <ul class="opacity-70 space-y-1 text-m">
+                    <li>Krishna P. Tambatkar</li>
+                    <li>B. V. Anagha</li>
+                    <li>K. Supriya</li>
+                    <li class="pt-2 italic opacity-80">Mentor:</li>
+                    <li>Dr. R. V. Sanjika Devi</li>
+                </ul>
+            </div>
+
+            <div class="border-t border-primary/20 pt-4">
+                <h4 class="font-bold mb-2">Tech Stack</h4>
+                <ul class="opacity-70 space-y-1">
+                    <li>Python & NumPy</li>
+                    <li>Open3D (Mesh Processing)</li>
+                    <li>KITTI Odometry Dataset</li>
+                    <li>PyYAML & Matplotlib</li>
+                </ul>
+            </div>
+            
+            <div class="border-t border-primary/20 pt-4">
+                <h4 class="font-bold mb-2">Key Algorithms</h4>
+                <ul class="opacity-70 space-y-1">
+                    <li>Particle Swarm Opt. (PSO)</li>
+                    <li>Fuzzy Logic Control</li>
+                    <li>Monte Carlo Localization</li>
+                    <li>Poisson Reconstruction</li>
+                </ul>
+            </div>
+        </aside>
+
+        <article class="md:col-span-8 prose prose-lg prose-headings:font-display prose-headings:text-primary prose-p:text-primary prose-li:text-primary prose-strong:text-primary marker:text-primary">
+            
+            <h3>The Problem</h3>
+            <p>
+                Accurate localization is the backbone of autonomous driving. Traditional methods like <strong>Monte Carlo Localization (MCL)</strong> often suffer from "particle deprivation" (getting stuck in local minima) and drift over long trajectories. [cite_start]Additionally, standard ground segmentation techniques (like PCA) fail on sloped or uneven terrain[cite: 6142], leading to corrupted maps and poor navigation.
+            </p>
+
+            <h3>Our Solution: Fuzzy-PSO-MCL</h3>
+            <p>
+                We proposed an end-to-end upgrade to the standard localization pipeline by introducing two novel components:
+            </p>
+            
+            <div class="my-8 p-6 bg-white/50 rounded-xl border border-primary/10">
+                <h4 class="text-lg font-bold mb-4 font-display">System Architecture</h4>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li><strong>Fuzzy Logic Ground Segmentation:</strong> Instead of hard binary thresholds, we used a fuzzy inference system (evaluating slope, curvature, and height variance) to assign a "ground confidence score." [cite_start]This allows the system to correctly map slopes and bumps that would confuse standard algorithms[cite: 6300].</li>
+                    <li><strong>Range-Image MCL:</strong> We converted 3D point clouds into 2D range images. [cite_start]By rendering synthetic views from particle poses and comparing them to real sensor data, we achieved efficient and robust state estimation[cite: 6188].</li>
+                    <li><strong>Particle Swarm Optimization (PSO):</strong> As a post-processing step, we applied PSO to the estimated trajectory. [cite_start]The swarm intelligence iteratively refined the vehicle's pose, smoothing out the "jitter" common in particle filters[cite: 6373].</li>
+                </ul>
+            </div>
+
+            <h3>Impact & Results</h3>
+            <p>
+                Tested on the <strong>KITTI Odometry Benchmark</strong>, our proposed system significantly outperformed baseline methods:
+            </p>
+            <ul>
+                [cite_start]<li><strong>High Accuracy:</strong> We achieved an average positional error of <strong>0.71m</strong>, compared to 1.45m for the standard PCA-MCL baseline[cite: 6453].</li>
+                <li><strong>Drift Elimination:</strong> The PSO refinement successfully corrected cumulative drift, resulting in "Very Low" drift metrics over long sequences.</li>
+                [cite_start]<li><strong>Efficiency:</strong> Despite the advanced logic, the system runs at ~0.55s per frame on a standard CPU, making it viable for near-real-time deployment[cite: 6453].</li>
+            </ul>
+
+        </article>
+      </div>
+
+    </main>
+
+    <footer class="border-t border-primary/10 py-12 text-center">
+        <a href="index.html" class="text-sm font-bold uppercase tracking-widest hover:opacity-60">← Back to Home</a>
+    </footer>
+
+</body>
+</html>

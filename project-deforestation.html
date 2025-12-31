@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="favicon_io/logooo.webp">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algorithmic Deforestation | Krishna Pradeep</title>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#10653c", 
+              beige: "#f2e9dd",   
+            },
+            fontFamily: {
+              display: ["Playfair Display", "serif"],
+              body: ["DM Sans", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body { background-color: #f2e9dd; color: #10653c; font-family: 'DM Sans', sans-serif; }
+      .font-display { font-family: 'Playfair Display', serif; }
+      
+      /* Scrollbar Logic */
+      ::-webkit-scrollbar { width: 12px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb {
+        background-color: #10653c;
+        border: 4px solid #f2e9dd;
+        border-radius: 99px;
+      }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <nav class="sticky top-0 z-50 w-full bg-beige/90 backdrop-blur-md border-b border-primary/10">
+      <div class="max-w-[1100px] mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="font-display font-bold text-3xl text-primary">Krishna PT</a>
+        <div class="flex items-center space-x-8 text-lg font-bold uppercase tracking-widest text-primary">
+          <a href="projects.html" class="hover:opacity-60">Back to Projects</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="flex-1 w-full max-w-[1200px] mx-auto px-6 py-20">
+      
+      <header class="mb-16 flex flex-col md:flex-row md:items-start md:justify-between gap-8">
+        
+        <div class="max-w-4xl">
+            <span class="text-xs font-bold tracking-widest uppercase opacity-60 mb-4 block">Sustainability / Algorithmic Optimization</span>
+            <h1 class="font-display text-5xl md:text-6xl mb-8 leading-tight">Algorithmic Approach to Controlled Deforestation</h1>
+            <p class="text-xl opacity-80 leading-relaxed">
+                An optimized model for balancing economic development with ecological preservation using Graph Theory and Multi-Criteria Decision Making (MCDM).
+            </p>
+        </div>
+
+        <a 
+          href="Papers/0.Algorithmic Approach to Controlled Deforestation.pdf" 
+          download
+          class="shrink-0 bg-primary text-beige px-8 py-4 rounded-lg font-bold text-sm uppercase tracking-widest hover:bg-primary/90 transition-all duration-300 transform hover:-translate-y-1 shadow-lg flex items-center gap-2 h-fit mt-4 md:mt-0"
+        > 
+            <span class="material-symbols-outlined"></span>
+            Download Paper
+        </a>
+
+      </header>
+
+      <div class="w-full max-w-3xl mx-auto aspect-video bg-primary/10 rounded-lg overflow-hidden border border-primary/20 mb-16 relative group">
+        <img 
+          src="Images/Project_Deforestation_IMG.png" 
+          class="w-full h-full object-cover transition-all duration-700 hover:scale-105"
+          alt="Visualization of ecological value and removal zones"
+        >
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+        
+        <aside class="md:col-span-4 space-y-8">
+            
+            <div class="border-t border-primary/20 pt-4">
+                <h4 class="font-bold mb-2">The Team</h4>
+                <ul class="opacity-70 space-y-1 text-m">
+                    <li>Krishna Pradeep T.</li>
+                    <li>Bhavaraju Venkata Anagha</li>
+                    <li>Abhishek Ajay</li>
+                    <li class="pt-2 italic opacity-80">Mentors:</li>
+                    <li>Kamatchi S.</li>
+                    <li>Sonali Agrawal A.</li>
+                </ul>
+            </div>
+
+            <div class="border-t border-primary/20 pt-4">
+                <h4 class="font-bold mb-2">Focus</h4>
+                <p class="opacity-70">Sustainability & Algorithms</p>
+            </div>
+            
+            <div class="border-t border-primary/20 pt-4">
+                <h4 class="font-bold mb-2">Tech Stack</h4>
+                <ul class="opacity-70 space-y-1">
+                    <li>Python (Scikit-Learn)</li>
+                    <li>DBSCAN Clustering</li>
+                    <li>OpenWeatherMap API</li>
+                    <li>GeoPlant Dataset</li>
+                </ul>
+            </div>
+            
+            <div class="border-t border-primary/20 pt-4">
+                <h4 class="font-bold mb-2">Key Algorithms</h4>
+                <ul class="opacity-70 space-y-1">
+                    <li>Tarjan's Algorithm</li>
+                    <li>AHP (Analytic Hierarchy Process)</li>
+                    <li>TOPSIS Ranking</li>
+                </ul>
+            </div>
+        </aside>
+
+        <article class="md:col-span-8 prose prose-lg prose-headings:font-display prose-headings:text-primary prose-p:text-primary prose-li:text-primary prose-strong:text-primary marker:text-primary">
+            
+            <h3>The Problem</h3>
+            <p>
+                Urbanization is inevitable, but random deforestation leads to catastrophic environmental damage, including air quality degradation and biodiversity loss. Traditional urban planning often lacks a quantitative, data-driven framework to decide <em>which</em> trees can be removed with the least ecological impact.
+            </p>
+            <p>
+                The challenge was to build a decision-support system that balances economic needs (development) with ecological preservation (air quality and connectivity).
+            </p>
+
+            <h3>Our Approach</h3>
+            <p>
+                We proposed a novel framework that treats forests as complex networks. Using the <strong>GeoPlant dataset</strong> (1.4 million entries) and real-time pollution data, we built a pipeline to identify "optimal" removal zones.
+            </p>
+            
+            <ul>
+                <li><strong>Clustering (DBSCAN):</strong> We grouped scattered trees into clusters to analyze them as ecological units rather than individual points.</li>
+                <li><strong>Graph Theory (Tarjan's Algorithm):</strong> We modeled these clusters as a graph. Tarjan's algorithm was used to identify "Articulation Points"—critical clusters that, if removed, would break the connectivity of the ecosystem. These were strictly protected .</li>
+                <li><strong>Multi-Criteria Decision Making (MCDM):</strong> For the remaining clusters, we used <strong>AHP</strong> to assign weights to criteria (AQI, Species Rarity, Density) and <strong>TOPSIS</strong> to rank them. The system recommends removing only the lowest-ranked clusters.</li>
+            </ul>
+
+            <h3>Impact & Results</h3>
+            <p>
+                The model was validated using real-world data and showed significant improvements over random selection:
+            </p>
+            <ul>
+                <li><strong>31.1% Improvement in AQI:</strong> Regions optimized by our model maintained significantly better air quality compared to average deforestation scenarios.</li>
+                <li><strong>Biodiversity Preservation:</strong> By integrating species rarity into the TOPSIS weighting, the model automatically flagged "Biodiversity Hotspots" as high-preservation zones.</li>
+                <li><strong>Scalability:</strong> The framework is designed to work with any spatial dataset, making it a viable tool for city planners and environmental agencies.</li>
+            </ul>
+
+        </article>
+      </div>
+
+    </main>
+
+    <footer class="border-t border-primary/10 py-12 text-center">
+        <a href="index.html" class="text-sm font-bold uppercase tracking-widest hover:opacity-60">← Back to Home</a>
+    </footer>
+
+</body>
+</html>

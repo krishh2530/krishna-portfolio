@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/x-icon" href="favicon_io/logooo.webp">
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Offline Speech Translator | Krishna Pradeep</title>
+    
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#10653c", 
+              beige: "#f2e9dd",   
+            },
+            fontFamily: {
+              display: ["Playfair Display", "serif"],
+              body: ["DM Sans", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body { background-color: #f2e9dd; color: #10653c; font-family: 'DM Sans', sans-serif; }
+      .font-display { font-family: 'Playfair Display', serif; }
+      
+      /* Scrollbar Logic */
+      ::-webkit-scrollbar { width: 12px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb {
+        background-color: #10653c;
+        border: 4px solid #f2e9dd;
+        border-radius: 99px;
+      }
+    </style>
+</head>
+
+<body class="flex flex-col min-h-screen">
+
+    <nav class="sticky top-0 z-50 w-full bg-beige/90 backdrop-blur-md border-b border-primary/10">
+      <div class="max-w-[1200px] mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="index.html" class="font-display font-bold text-3xl text-primary">Krishna PT</a>
+        <div class="flex items-center space-x-8 text-lg font-bold uppercase tracking-widest text-primary">
+          <a href="projects.html" class="hover:opacity-60">Back to Projects</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="flex-1 w-full max-w-[1200px] mx-auto px-6 py-20">
+      
+      <header class="mb-16 flex flex-col md:flex-row md:items-start md:justify-between gap-8">
+        
+        <div class="max-w-4xl">
+            <span class="text-xs font-bold tracking-widest uppercase opacity-60 mb-4 block">Embedded Systems / NLP / Edge AI</span>
+            <h1 class="font-display text-5xl md:text-6xl mb-8 leading-tight">Offline Speech Translator for Low-Resource Languages</h1>
+            <p class="text-xl opacity-80 leading-relaxed">
+                A portable, bidirectional speech-to-speech translator powered by Raspberry Pi, designed to bridge language gaps in rural India without internet dependency.
+            </p>
+        </div>
+
+        <a  
+          href="Papers & Reports\Raspberry_Report_2.pdf" 
+          download
+          class="md:ml-auto shrink-0 bg-primary text-beige px-8 py-4 rounded-lg font-bold text-sm uppercase tracking-widest hover:bg-primary/90 transition-all duration-300 transform hover:-translate-y-1 shadow-lg flex items-center gap-2 h-fit mt-4 md:mt-0"
+        >
+            <span class="material-symbols-outlined">description</span>
+            Download Report
+        </a>
+      </header>
+
+      <div class="w-full max-w-4xl mx-auto bg-primary/5 rounded-lg overflow-hidden border border-primary/20 mb-16 relative group">
+        <img 
+          src="Images/Project_Raspberry_IMG.png" 
+          class="w-full h-auto block transition-all duration-700 hover:scale-105"
+          alt="Raspberry Pi Hardware Setup"
+        >
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+        
+        <aside class="md:col-span-4 space-y-8">
+            
+            <div class="border-t border-primary/20 pt-4">
+                <h4 class="font-bold mb-2">The Team</h4>
+                <ul class="opacity-70 space-y-1 text-m">
+                    <li>Krishna P. T.</li>
+                    <li>K. Tappan Chengappa</li>
+                    <li>Krithik Ramesh Iyer</li>
+                    <li class="pt-2 italic opacity-80">Mentor:</li>
+                    <li>Dr. Sreeja Kochuvila</li>
+                </ul>
+            </div>
+
+            <div class="border-t border-primary/20 pt-4">
+                <h4 class="font-bold mb-2">Hardware</h4>
+                <ul class="opacity-70 space-y-1">
+                    <li>Raspberry Pi 5 (8GB)</li>
+                    <li>MIVI Bluetooth Speaker</li>
+                    <!-- <li>USB Microphone</li> -->
+                </ul>
+            </div>
+            
+            <div class="border-t border-primary/20 pt-4">
+                <h4 class="font-bold mb-2">Tech Stack</h4>
+                <ul class="opacity-70 space-y-1">
+                    <li>Python (Ubuntu 24.04)</li>
+                    <li>Vosk (ASR)</li>
+                    <li>IndicTrans2 (NMT)</li>
+                    <li>IndicTTS (Text-to-Speech)</li>
+                </ul>
+            </div>
+        </aside>
+
+        <article class="md:col-span-8 prose prose-lg prose-headings:font-display prose-headings:text-primary prose-p:text-primary prose-li:text-primary prose-strong:text-primary marker:text-primary">
+            
+            <h3>The Problem</h3>
+            <p>
+                India is home to over 19,500 languages and dialects. While tools like Google Translate exist, they suffer from two critical flaws in rural contexts: <strong>internet dependency</strong> and a lack of support for <strong>low-resource tribal languages</strong>. For non-literate populations in remote areas, text-based translation apps are inaccessible, creating barriers in healthcare, education, and governance.
+            </p>
+
+            <h3>The Solution</h3>
+            <p>
+                We developed a <strong>standalone, offline speech-to-speech translator</strong> running entirely on the edge (Raspberry Pi 5). It enables real-time bidirectional communication (e.g., Hindi ↔ English) without needing Wi-Fi or 4G data.
+            </p>
+            
+            <div class="my-8 p-6 bg-white/50 rounded-xl border border-primary/10">
+                <h4 class="text-lg font-bold mb-4 font-display">System Architecture</h4>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li><strong>Speech-to-Text (STT):</strong> Utilizing the <strong>Vosk</strong> model for lightweight, offline audio transcription.</li>
+                    <li><strong>Neural Machine Translation (NMT):</strong> Integrating <strong>IndicTrans2</strong>, a transformer-based model fine-tuned for Indian languages, to translate text with high semantic accuracy.</li>
+                    <li><strong>Text-to-Speech (TTS):</strong> Using <strong>IndicTTS</strong> to synthesize natural-sounding speech output, making the device usable for illiterate users.</li>
+                </ul>
+            </div>
+
+            <h3>Impact & Results</h3>
+            <p>
+                The prototype successfully demonstrated that advanced AI models can run on affordable edge hardware (~₹11,000 Total Cost) to serve social goals.
+            </p>
+            <ul>
+                <li><strong>Offline Capability:</strong> The system functions 100% offline, eliminating data costs and connectivity issues common in rural India.</li>
+                <li><strong>Optimization:</strong> We optimized the pipeline to run on ARM architecture (Raspberry Pi), managing the trade-off between model size and translation latency.</li>
+                <li><strong>Social Impact:</strong> By bridging the language gap, this tool directly supports <strong>SDG 10 (Reduced Inequalities)</strong> and <strong>SDG 16 (Peace & Justice)</strong>, empowering marginalized communities to access public services in their native tongue.</li>
+            </ul>
+
+        </article>
+      </div>
+
+    </main>
+
+    <footer class="border-t border-primary/10 py-12 text-center">
+        <a href="index.html" class="text-sm font-bold uppercase tracking-widest hover:opacity-60">← Back to Home</a>
+    </footer>
+
+</body>
+</html>
