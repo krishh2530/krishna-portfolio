@@ -52,6 +52,18 @@
         background-color: #f2e9dd !important;  
         border-color: #10653c !important; 
       }
+
+      /* Prevent body scroll when menu is open */
+      body.menu-open {
+        overflow: hidden;
+      }
+
+      /* Hide profile button on mobile */
+      @media (max-width: 768px) {
+        #profileToggleBtn {
+          display: none !important;
+        }
+      }
     </style>
   </head>
   
@@ -78,16 +90,20 @@
           <a href="contact.html" class="relative group py-2">Contact<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span></a>
         </div>
 
-        <button onclick="toggleMobileMenu()" class="md:hidden z-50 text-primary p-2 focus:outline-none transition-transform active:scale-95">
-            <span class="material-symbols-outlined text-3xl">menu</span>
+        <button id="menuToggle" onclick="toggleMobileMenu()" class="md:hidden z-[80] text-primary p-2 focus:outline-none transition-all active:scale-95 relative">
+            <span id="menuIcon" class="material-symbols-outlined text-3xl transition-transform duration-300">menu</span>
         </button>
       </div>
+    </nav>
 
-      <div id="mobileMenuOverlay" onclick="toggleMobileMenu()" class="fixed inset-0 z-[60] bg-primary/20 backdrop-blur-[2px] opacity-0 pointer-events-none transition-opacity duration-300"></div>
+    <!-- Mobile Menu Overlay -->
+    <div id="mobileMenuOverlay" onclick="closeMobileMenu()" class="fixed inset-0 z-[60] bg-primary/20 backdrop-blur-[2px] opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
 
-      <div id="mobileMenuSheet" class="fixed bottom-0 left-0 right-0 z-[70] bg-[#faf9f6] rounded-t-[2rem] p-6 shadow-[0_-10px_40px_rgba(0,0,0,0.1)] transform translate-y-full transition-transform duration-500 cubic-bezier(0.32, 0.72, 0, 1) md:hidden border-t border-primary/5">
-        
-        <div class="flex flex-col items-center gap-2 mb-8">
+    <!-- Mobile Menu Sheet -->
+    <div id="mobileMenuSheet" class="fixed bottom-0 left-0 right-0 z-[70] bg-[#faf9f6] rounded-t-[2rem] shadow-[0_-10px_40px_rgba(0,0,0,0.1)] transition-transform duration-400 ease-out translate-y-full md:hidden border-t border-primary/5 max-h-[70vh] overflow-y-auto">
+      
+      <div class="p-6">
+        <div class="flex flex-col items-center gap-2 mb-6">
             <div class="w-12 h-1.5 bg-primary/10 rounded-full"></div>
             <h3 class="font-display text-2xl font-bold text-primary mt-4">Explore</h3>
         </div>
@@ -135,12 +151,8 @@
             </a>
 
         </div>
-
-        <button onclick="toggleMobileMenu()" class="w-full py-6 text-center text-xs font-bold uppercase tracking-widest text-primary/40 hover:text-primary transition-colors mt-2">
-            Close Menu
-        </button>
       </div>
-    </nav>
+    </div>
 
     <main class="flex-1 w-full max-w-[1100px] mx-auto px-6">
       
@@ -150,7 +162,7 @@
         </div>
         
         <h1 class="font-display text-4xl md:text-7xl lg:text-7xl leading-[1.2] mb-12">
-          “The thought that I might not make it never crosses my consciousness.”
+          "The thought that I might not make it never crosses my consciousness."
         </h1>
         
         <div class="flex flex-col items-center gap-2 opacity-60">
@@ -246,7 +258,8 @@
       </div>
     </footer>
 
-    <div class="fixed top-24 left-8 z-40 flex flex-col items-start gap-3">
+    <!-- Profile Widget (Hidden on Mobile) -->
+    <div id="profileToggleBtn" class="fixed top-24 left-8 z-40 flex flex-col items-start gap-3">
         <button onclick="toggleProfile()" class="bg-[#1a1a1a] hover:bg-primary text-white w-12 h-12 rounded-xl flex items-center justify-center shadow-lg transition-all duration-300 hover:scale-110 group border border-white/10">
             <span id="profileIcon" class="material-symbols-outlined text-2xl transition-transform duration-300 group-hover:rotate-12">person</span>
             <span id="closeIcon" class="material-symbols-outlined text-2xl absolute opacity-0 rotate-180 transition-all duration-300">close</span>
@@ -277,7 +290,7 @@
     </div>
 
     <script>
-      // 1. SCROLLBAR LOGIC
+      // SCROLLBAR LOGIC
       document.addEventListener("DOMContentLoaded", () => {
         const observer = new IntersectionObserver((entries) => {
           let isGreenVisible = false;
@@ -295,7 +308,7 @@
         greenSections.forEach(section => observer.observe(section));
       });
 
-      // 2. PROFILE WIDGET TOGGLE
+      // PROFILE WIDGET TOGGLE
       function toggleProfile() {
           const card = document.getElementById('profileCard');
           const profileIcon = document.getElementById('profileIcon');
@@ -313,24 +326,47 @@
           }
       }
 
-      // 3. MOBILE MENU TOGGLE (Bottom Sheet Logic)
+      // MOBILE MENU TOGGLE
+      let menuOpen = false;
+
       function toggleMobileMenu() {
-        const overlay = document.getElementById('mobileMenuOverlay');
-        const sheet = document.getElementById('mobileMenuSheet');
-        
-        // Check if the menu is currently closed (based on the class 'translate-y-full')
-        const isClosed = sheet.classList.contains('translate-y-full');
-        
-        if (isClosed) {
-            // OPEN MENU
-            overlay.classList.remove('opacity-0', 'pointer-events-none');
-            sheet.classList.remove('translate-y-full');
+        if (menuOpen) {
+          closeMobileMenu();
         } else {
-            // CLOSE MENU
-            overlay.classList.add('opacity-0', 'pointer-events-none');
-            sheet.classList.add('translate-y-full');
+          openMobileMenu();
         }
       }
+
+      function openMobileMenu() {
+        const overlay = document.getElementById('mobileMenuOverlay');
+        const sheet = document.getElementById('mobileMenuSheet');
+        const icon = document.getElementById('menuIcon');
+        
+        document.body.classList.add('menu-open');
+        overlay.classList.remove('opacity-0', 'pointer-events-none');
+        sheet.classList.remove('translate-y-full');
+        icon.textContent = 'close';
+        icon.style.transform = 'rotate(90deg)';
+        menuOpen = true;
+      }
+
+      function closeMobileMenu() {
+        const overlay = document.getElementById('mobileMenuOverlay');
+        const sheet = document.getElementById('mobileMenuSheet');
+        const icon = document.getElementById('menuIcon');
+        
+        document.body.classList.remove('menu-open');
+        overlay.classList.add('opacity-0', 'pointer-events-none');
+        sheet.classList.add('translate-y-full');
+        icon.textContent = 'menu';
+        icon.style.transform = 'rotate(0deg)';
+        menuOpen = false;
+      }
+
+      // Auto-close menu when clicking any link
+      document.querySelectorAll('#mobileMenuSheet a').forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+      });
     </script>
   </body>
 </html>
