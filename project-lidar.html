@@ -123,7 +123,7 @@
             
             <h3>The Problem</h3>
             <p>
-                Accurate localization is the backbone of autonomous driving. Traditional methods like <strong>Monte Carlo Localization (MCL)</strong> often suffer from "particle deprivation" (getting stuck in local minima) and drift over long trajectories. [cite_start]Additionally, standard ground segmentation techniques (like PCA) fail on sloped or uneven terrain[cite: 6142], leading to corrupted maps and poor navigation.
+                Accurate localization is the backbone of autonomous driving. Traditional methods like <strong>Monte Carlo Localization (MCL)</strong> often suffer from "particle deprivation" (getting stuck in local minima) and drift over long trajectories. Additionally, standard ground segmentation techniques (like PCA) fail on sloped or uneven terrain, leading to corrupted maps and poor navigation.
             </p>
 
             <h3>Our Solution: Fuzzy-PSO-MCL</h3>
@@ -134,9 +134,9 @@
             <div class="my-8 p-6 bg-white/50 rounded-xl border border-primary/10">
                 <h4 class="text-lg font-bold mb-4 font-display">System Architecture</h4>
                 <ul class="list-disc pl-5 space-y-2">
-                    <li><strong>Fuzzy Logic Ground Segmentation:</strong> Instead of hard binary thresholds, we used a fuzzy inference system (evaluating slope, curvature, and height variance) to assign a "ground confidence score." [cite_start]This allows the system to correctly map slopes and bumps that would confuse standard algorithms[cite: 6300].</li>
-                    <li><strong>Range-Image MCL:</strong> We converted 3D point clouds into 2D range images. [cite_start]By rendering synthetic views from particle poses and comparing them to real sensor data, we achieved efficient and robust state estimation[cite: 6188].</li>
-                    <li><strong>Particle Swarm Optimization (PSO):</strong> As a post-processing step, we applied PSO to the estimated trajectory. [cite_start]The swarm intelligence iteratively refined the vehicle's pose, smoothing out the "jitter" common in particle filters[cite: 6373].</li>
+                    <li><strong>Fuzzy Logic Ground Segmentation:</strong> Instead of hard binary thresholds, we used a fuzzy inference system (evaluating slope, curvature, and height variance) to assign a "ground confidence score." This allows the system to correctly map slopes and bumps that would confuse standard algorithms.</li>
+                    <li><strong>Range-Image MCL:</strong> We converted 3D point clouds into 2D range images. By rendering synthetic views from particle poses and comparing them to real sensor data, we achieved efficient and robust state estimation.</li>
+                    <li><strong>Particle Swarm Optimization (PSO):</strong> As a post-processing step, we applied PSO to the estimated trajectory. The swarm intelligence iteratively refined the vehicle's pose, smoothing out the "jitter" common in particle filters.</li>
                 </ul>
             </div>
 
@@ -145,9 +145,9 @@
                 Tested on the <strong>KITTI Odometry Benchmark</strong>, our proposed system significantly outperformed baseline methods:
             </p>
             <ul>
-                [cite_start]<li><strong>High Accuracy:</strong> We achieved an average positional error of <strong>0.71m</strong>, compared to 1.45m for the standard PCA-MCL baseline[cite: 6453].</li>
+                <li><strong>High Accuracy:</strong> We achieved an average positional error of <strong>0.71m</strong>, compared to 1.45m for the standard PCA-MCL baseline.</li>
                 <li><strong>Drift Elimination:</strong> The PSO refinement successfully corrected cumulative drift, resulting in "Very Low" drift metrics over long sequences.</li>
-                [cite_start]<li><strong>Efficiency:</strong> Despite the advanced logic, the system runs at ~0.55s per frame on a standard CPU, making it viable for near-real-time deployment[cite: 6453].</li>
+                <li><strong>Efficiency:</strong> Despite the advanced logic, the system runs at ~0.55s per frame on a standard CPU, making it viable for near-real-time deployment.</li>
             </ul>
 
         </article>

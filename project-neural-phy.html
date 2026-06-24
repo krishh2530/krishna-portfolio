@@ -55,7 +55,7 @@
     <main class="flex-1 w-full max-w-[900px] mx-auto px-6 py-20">
       
       <header class="mb-16">
-        <span class="text-xs font-bold tracking-widest uppercase opacity-60 mb-4 block">6G Research / Deep Learning / Wireless Comms</span>
+        <span class="text-xs font-bold tracking-widest uppercase opacity-60 mb-4 block">Samsung R&D / 5G NR PHY / MIMO Detection</span>
         <h1 class="font-display text-5xl md:text-6xl mb-8 leading-tight">AI-Native PHY & Neural Receivers</h1>
         <p class="text-xl opacity-80 leading-relaxed max-w-2xl">
             Replacing traditional block-based wireless receivers with end-to-end learnable neural networks using the NVIDIA Sionna framework.
@@ -120,29 +120,33 @@
                 The industry is moving toward <strong>AI-Native PHY</strong>, where the entire receiver chain is replaced by a single Neural Network (Neural Receiver) that learns to jointly optimize detection and estimation directly from data.
             </p>
 
-            <h3>Current Approach</h3>
+            <h3>Our Approach</h3>
             <p>
-                I am leveraging <strong>NVIDIA’s Sionna framework</strong> to simulate and benchmark these Neural Receivers (NRX). The core architecture involves a GNN (Graph Neural Network) combined with CNN layers to handle Multi-User MIMO scenarios.
+                I designed a <strong>training-free hybrid receiver</strong> that fuses NVIDIA's pretrained CGNN neural receiver with a classical K-Best detector — combining their outputs at the log-likelihood ratio (LLR) level rather than retraining either model. The optimal combining weight (α* = 0.30) was derived analytically from inverse-reliability theory, with a correction term for CGNN's error correlation.
             </p>
-            
-            <ul>
-                <li><strong>Environment Setup:</strong> Configured a custom TensorFlow/Sionna environment to run 5G NR uplink simulations, overcoming hardware limitations by optimizing for CPU execution where necessary.</li>
-                <li><strong>Simulation:</strong> Running Monte Carlo simulations to evaluate Bit Error Rate (BER) vs. Signal-to-Noise Ratio (Eb/No).</li>
-                <li><strong>Robustness Testing:</strong> Evaluating performance across TDL (Tapped Delay Line) channel models for both Single-User and Multi-User interference scenarios.</li>
-            </ul>
 
-            <h3>Research Impact & Goals</h3>
+            <div class="my-8 p-6 bg-white/50 rounded-xl border border-primary/10">
+                <h4 class="text-lg font-bold mb-4 font-display">System Architecture</h4>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li><strong>LLR-Level Fusion:</strong> Diagnosed a scale mismatch between CGNN's normalized internal channel representation and the true physical channel — establishing that hybridization had to happen at the LLR level, not the channel-estimate level.</li>
+                    <li><strong>Simulation Stack:</strong> Built the full benchmark on NVIDIA Sionna/TensorFlow, implementing LS, LMMSE, and K-Best baselines alongside an end-to-end autoencoder with learned non-rectangular constellations.</li>
+                    <li><strong>Validation:</strong> Ran Monte Carlo simulations across the DoubleTDL 2-user benchmark and multiple channel types (Rician, Rayleigh, AWGN) to test generalization.</li>
+                </ul>
+            </div>
+
+            <h3>Impact & Results</h3>
             <p>
-                This project aims to demonstrate that a <strong>jointly optimized neural receiver</strong> can outperform classical baselines, particularly in non-linear channel conditions.
-            </p>
-            <p>
-                By training an end-to-end autoencoder, we are moving away from mathematically modeled blocks to a system that "learns" the physics of the channel[cite: 1]. This has the potential to:
+                Benchmarked against classical and neural baselines, the hybrid receiver delivered a training-free improvement with real deployment advantages:
             </p>
             <ul>
-                <li>Significantly reduce Bit Error Rates (BER) in high-interference environments.</li>
-                <li>Generalize better to unseen channel conditions compared to rigid classical algorithms.</li>
-                <li>Pave the way for 6G standards where AI is native to the physical layer design.</li>
+                <li><strong>Outperformed LMMSE+K-Best by 0.20 dB</strong>, achieving a 3.41 dB gain at BLER=10⁻² on the DoubleTDL 2-user benchmark — with zero model retraining.</li>
+                <li><strong>Statistically validated:</strong> The combining weight held at 4.3σ significance across 1,000+ block errors and 7 independent SNR points.</li>
+                <li><strong>45% fewer parameters</strong> than the prior state-of-the-art (Wiesmayr et al. Large NRX — 241K vs. 440K), with zero retraining GPU-hours versus its reported 122+ A100-hours.</li>
+                <li><strong>Real-time viable:</strong> ~1.8 ms inference latency on an A100 GPU, within HARQ timing requirements.</li>
             </ul>
+            <p>
+                This work was documented in a 6-page IEEE conference paper covering the method, optimal-weight theory, and cross-channel generalization results.
+            </p>
 
         </article>
       </div>
