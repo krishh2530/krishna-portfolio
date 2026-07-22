@@ -3,10 +3,11 @@
 <html class="scroll-smooth" lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Work Experience | Software Engineer Portfolio</title>
+<title>Work Experience | Krishna PT</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
+<link rel="icon" type="image/x-icon" href="favicon_io/logooo.webp">
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&amp;family=Noto+Sans:ital,wght@0,100..900;1,100..900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
@@ -118,6 +119,9 @@
             z-index: -1;
             pointer-events: none;
         }
+        body.menu-open {
+            overflow: hidden;
+        }
     </style>
 </head>
 <body class="bg-cream text-forest-deep antialiased min-h-screen flex flex-col relative overflow-x-hidden">
@@ -127,26 +131,99 @@
 <div class="organic-blob w-[600px] h-[600px] top-[40%] -right-[150px]"></div>
 </div>
 <!-- TopNavBar -->
-<header class="bg-background dark:bg-background docked full-width top-0 border-b border-forest-deep/5 flat no shadows z-50">
+<header class="bg-[#f2e9dd] docked full-width top-0 border-b border-forest-deep/5 flat no shadows z-50 sticky">
 <div class="flex justify-between items-center w-full px-page-margin-mobile md:px-page-margin-tablet lg:px-page-margin-desktop py-6 max-w-container-max mx-auto">
-<a class="font-display-md-mobile text-display-md-mobile lg:font-display-lg lg:text-display-lg text-forest-deep dark:text-primary-fixed tracking-tight hover:opacity-80 transition-all duration-300" href="#">
-                Portfolio
-            </a>
-<nav class="hidden md:flex gap-8">
-<a class="font-label-sm text-label-sm uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim hover:text-forest-deep dark:hover:text-primary-fixed transition-colors hover:opacity-80 duration-300 hover:-translate-y-0.5 transition-transform" href="#">Home</a>
-<a class="font-label-sm text-label-sm uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim hover:text-forest-deep dark:hover:text-primary-fixed transition-colors hover:opacity-80 duration-300 hover:-translate-y-0.5 transition-transform" href="#">Projects</a>
-<a class="font-label-sm text-label-sm uppercase tracking-widest text-forest-deep dark:text-primary-fixed border-b-2 border-forest-deep dark:border-primary-fixed pb-1 hover:opacity-80 duration-300 hover:-translate-y-0.5 transition-transform" href="#">About Me</a>
-<a class="font-label-sm text-label-sm uppercase tracking-widest text-secondary dark:text-secondary-fixed-dim hover:text-forest-deep dark:hover:text-primary-fixed transition-colors hover:opacity-80 duration-300 hover:-translate-y-0.5 transition-transform" href="#">Contact</a>
+<a class="flex items-center gap-3 group" href="index.html">
+<img
+    src="favicon_io/logooo.webp"
+    alt="Krishna PT logo"
+    class="h-10 w-10 object-contain grayscale group-hover:grayscale-0 transition-all"
+/>
+<span class="font-display-md-mobile text-2xl lg:text-3xl font-bold text-forest-deep tracking-tight group-hover:opacity-80 transition-all duration-300">
+                Krishna PT
+            </span>
+</a>
+<nav class="hidden md:flex items-center gap-8 font-sans text-lg font-bold uppercase tracking-widest text-[#10653c]">
+<a class="relative group py-2 hover:opacity-80 transition-opacity" href="index.html">Home<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#10653c] transition-all duration-300 group-hover:w-full"></span></a>
+<a class="relative group py-2" href="workexperience.html">Work Experience<span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#10653c] transition-all duration-300"></span></a>
+<a class="relative group py-2 hover:opacity-80 transition-opacity" href="projects.html">Projects<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#10653c] transition-all duration-300 group-hover:w-full"></span></a>
+<a class="relative group py-2 hover:opacity-80 transition-opacity" href="about.html">About Me<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#10653c] transition-all duration-300 group-hover:w-full"></span></a>
+<a class="relative group py-2 hover:opacity-80 transition-opacity" href="contact.html">Contact<span class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#10653c] transition-all duration-300 group-hover:w-full"></span></a>
 </nav>
-<a class="hidden md:inline-flex items-center justify-center px-6 py-3 bg-forest-deep text-cream rounded-full font-label-sm text-label-sm uppercase tracking-widest hover:opacity-90 hover:-translate-y-1 transition-all duration-300 shadow-primary/20" href="#">
+<a class="hidden md:inline-flex items-center justify-center px-6 py-3 bg-forest-deep text-cream rounded-full font-label-sm text-label-sm uppercase tracking-widest hover:opacity-90 hover:-translate-y-1 transition-all duration-300 shadow-primary/20" href="Krishna_P_Tambatkar_CV.pdf" download>
                 Resume
             </a>
-<button class="md:hidden text-forest-deep">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+<button id="menuToggle" onclick="toggleMobileMenu()" class="md:hidden z-[80] text-forest-deep p-2 focus:outline-none transition-all active:scale-95 relative">
+<span id="menuIcon" class="material-symbols-outlined text-3xl transition-transform duration-300" style="font-variation-settings: 'FILL' 0;">menu</span>
 </button>
 </div>
 </header>
-<main class="flex-grow pt-24 pb-section-gap relative">
+
+<!-- Mobile Menu Overlay -->
+<div id="mobileMenuOverlay" onclick="closeMobileMenu()" class="fixed inset-0 z-[60] bg-forest-deep/20 backdrop-blur-[2px] opacity-0 pointer-events-none transition-opacity duration-300 md:hidden"></div>
+
+<!-- Mobile Menu Sheet -->
+<div id="mobileMenuSheet" class="fixed bottom-0 left-0 right-0 z-[70] bg-surface-container-lowest rounded-t-[2rem] shadow-[0_-10px_40px_rgba(0,0,0,0.1)] transition-transform duration-400 ease-out translate-y-full md:hidden border-t border-forest-deep/5 max-h-[70vh] overflow-y-auto" style="transform: translateY(100%);">
+<div class="p-6">
+<div class="flex flex-col items-center gap-2 mb-6">
+<div class="w-12 h-1.5 bg-forest-deep/10 rounded-full"></div>
+<h3 class="font-headline-sm text-headline-sm text-forest-deep mt-4">Explore</h3>
+</div>
+<div class="flex flex-col gap-3">
+<a href="index.html" class="flex items-center justify-between bg-cream/40 p-4 rounded-2xl border border-forest-deep/5 shadow-sm hover:border-forest-deep/20 active:scale-[0.98] transition-all group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-forest-deep/5 flex items-center justify-center text-forest-deep group-hover:bg-forest-deep group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-xl">home</span>
+</div>
+<span class="font-bold text-forest-deep text-lg">Home</span>
+</div>
+<span class="material-symbols-outlined text-forest-deep/30 group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+<a href="workexperience.html" class="flex items-center justify-between bg-cream/40 p-4 rounded-2xl border border-forest-deep/20 shadow-sm active:scale-[0.98] transition-all group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-forest-deep flex items-center justify-center text-white transition-colors">
+<span class="material-symbols-outlined text-xl">work</span>
+</div>
+<span class="font-bold text-forest-deep text-lg">Work Experience</span>
+</div>
+<span class="material-symbols-outlined text-forest-deep/30 group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+<a href="projects.html" class="flex items-center justify-between bg-cream/40 p-4 rounded-2xl border border-forest-deep/5 shadow-sm hover:border-forest-deep/20 active:scale-[0.98] transition-all group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-forest-deep/5 flex items-center justify-center text-forest-deep group-hover:bg-forest-deep group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-xl">grid_view</span>
+</div>
+<span class="font-bold text-forest-deep text-lg">Projects</span>
+</div>
+<span class="material-symbols-outlined text-forest-deep/30 group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+<a href="about.html" class="flex items-center justify-between bg-cream/40 p-4 rounded-2xl border border-forest-deep/5 shadow-sm hover:border-forest-deep/20 active:scale-[0.98] transition-all group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-forest-deep/5 flex items-center justify-center text-forest-deep group-hover:bg-forest-deep group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-xl">person</span>
+</div>
+<span class="font-bold text-forest-deep text-lg">About Me</span>
+</div>
+<span class="material-symbols-outlined text-forest-deep/30 group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+<a href="contact.html" class="flex items-center justify-between bg-cream/40 p-4 rounded-2xl border border-forest-deep/5 shadow-sm hover:border-forest-deep/20 active:scale-[0.98] transition-all group">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-forest-deep/5 flex items-center justify-center text-forest-deep group-hover:bg-forest-deep group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-xl">mail</span>
+</div>
+<span class="font-bold text-forest-deep text-lg">Contact</span>
+</div>
+<span class="material-symbols-outlined text-forest-deep/30 group-hover:translate-x-1 transition-transform">chevron_right</span>
+</a>
+<a href="Krishna_P_Tambatkar_CV.pdf" download class="flex items-center justify-center gap-2 bg-forest-deep p-4 rounded-2xl active:scale-[0.98] transition-all mt-2">
+<span class="material-symbols-outlined text-cream text-xl">download</span>
+<span class="font-bold text-cream text-lg">Resume</span>
+</a>
+</div>
+</div>
+</div>
+
+<main class="flex-grow pt-12 pb-section-gap relative">
 <!-- Hero Section -->
 <section class="px-page-margin-mobile md:px-page-margin-tablet lg:px-page-margin-desktop max-w-container-max mx-auto mb-section-gap pt-12 md:pt-24">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-element-gap">
@@ -156,26 +233,33 @@
 <span class="ml-12 md:ml-32 italic text-forest-deep/80">Experience</span>
 </h1>
 <p class="font-body-md text-body-md md:text-[20px] md:leading-[1.6] text-on-surface-variant max-w-2xl ml-4 md:ml-12 border-l border-forest-deep/20 pl-6">
-                        A chronicle of professional growth, technical exploration, and engineering impact. Building robust systems and refining user experiences across modern technology stacks.
+                        Two internships, two different engineering problems — from secure embedded firmware bridging hardware and the cloud, to a published contribution in wireless systems research. Real work, building toward a full-time role.
                     </p>
 </div>
 </div>
 </section>
+
 <!-- Experience Timeline -->
 <section class="px-page-margin-mobile md:px-page-margin-tablet lg:px-page-margin-desktop max-w-container-max mx-auto relative">
 <!-- Central Line (Desktop) -->
 <div class="hidden md:block absolute left-1/2 top-0 bottom-0 editorial-line -translate-x-1/2 z-0"></div>
-<!-- Internship 1 -->
+
+<!-- Internship 1: Wipro (current) -->
 <div class="relative z-10 mb-section-gap group">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
 <div class="md:text-right pr-0 md:pr-12">
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-forest-deep/60 block mb-2">May 2023 – Aug 2023</span>
-<h2 class="font-display-lg text-[40px] md:text-display-lg text-forest-deep leading-none mb-4">TechNova <br/> Solutions</h2>
-<h3 class="font-headline-sm text-headline-sm text-on-surface-variant italic mb-6">Software Engineer Intern</h3>
-<div class="hidden md:flex justify-end gap-3 mt-8">
-<span class="px-4 py-1 rounded-full border border-forest-deep/10 font-label-xs text-label-xs text-forest-deep uppercase tracking-widest backdrop-blur-sm bg-surface-bright/50">React</span>
-<span class="px-4 py-1 rounded-full border border-forest-deep/10 font-label-xs text-label-xs text-forest-deep uppercase tracking-widest backdrop-blur-sm bg-surface-bright/50">Node.js</span>
-<span class="px-4 py-1 rounded-full border border-forest-deep/10 font-label-xs text-label-xs text-forest-deep uppercase tracking-widest backdrop-blur-sm bg-surface-bright/50">AWS</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-forest-deep/60 block mb-2">Apr 2026 – Jul 2026</span>
+<div class="flex md:justify-end mb-4">
+<div class="inline-flex items-center justify-center h-32 md:h-44 px-8 md:px-10 bg-surface-container-lowest rounded-2xl border border-forest-deep/10 shadow-sm">
+<img src="Images/wipro_logo.webp" alt="Wipro logo" class="h-20 md:h-28 w-auto object-contain">
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface-variant italic mb-6">IoT Software Engineering Intern</h3>
+<div class="hidden md:flex justify-end flex-wrap gap-3 mt-8">
+<span class="px-4 py-1 rounded-full border border-forest-deep/10 font-label-xs text-label-xs text-forest-deep uppercase tracking-widest backdrop-blur-sm bg-surface-bright/50">C</span>
+<span class="px-4 py-1 rounded-full border border-forest-deep/10 font-label-xs text-label-xs text-forest-deep uppercase tracking-widest backdrop-blur-sm bg-surface-bright/50">FreeRTOS</span>
+<span class="px-4 py-1 rounded-full border border-forest-deep/10 font-label-xs text-label-xs text-forest-deep uppercase tracking-widest backdrop-blur-sm bg-surface-bright/50">MQTT</span>
+<span class="px-4 py-1 rounded-full border border-forest-deep/10 font-label-xs text-label-xs text-forest-deep uppercase tracking-widest backdrop-blur-sm bg-surface-bright/50">AWS IoT Core</span>
 </div>
 </div>
 <div class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-cream border-2 border-forest-deep rounded-full z-20 group-hover:bg-forest-deep transition-colors duration-500"></div>
@@ -185,35 +269,47 @@
 <ul class="space-y-6">
 <li class="font-body-md text-body-md text-on-surface-variant flex items-start group/item">
 <span class="material-symbols-outlined text-forest-deep/40 mr-4 mt-1 group-hover/item:text-forest-deep transition-colors" style="font-variation-settings: 'FILL' 0;">arrow_right_alt</span>
-<span>Spearheaded full-stack feature development, translating complex business requirements into elegant, maintainable React components and robust Node.js APIs.</span>
+<span>Architected the firmware for a Quectel EC800G cellular module using dedicated, independent threads for sending and receiving data, establishing a secure 4G LTE connection to AWS IoT Core.</span>
 </li>
 <li class="font-body-md text-body-md text-on-surface-variant flex items-start group/item">
 <span class="material-symbols-outlined text-forest-deep/40 mr-4 mt-1 group-hover/item:text-forest-deep transition-colors" style="font-variation-settings: 'FILL' 0;">arrow_right_alt</span>
-<span>Optimized database queries and front-end rendering patterns, resulting in a 25% reduction in initial page load time for the core analytics dashboard.</span>
+<span>Implemented TLS 1.2 encryption with SNI-based routing, provisioning and authenticating AWS X.509 certificates directly on the device's flash memory for verified, secure cloud communication.</span>
 </li>
 <li class="font-body-md text-body-md text-on-surface-variant flex items-start group/item">
 <span class="material-symbols-outlined text-forest-deep/40 mr-4 mt-1 group-hover/item:text-forest-deep transition-colors" style="font-variation-settings: 'FILL' 0;">arrow_right_alt</span>
-<span>Collaborated deeply within an Agile cross-functional team, participating in sprint planning, rigorous code reviews, and architectural discussions.</span>
+<span>Engineered a full-duplex MQTT client with guaranteed message delivery and careful memory buffering, preventing data overflow while parsing cloud commands in real time.</span>
+</li>
+<li class="font-body-md text-body-md text-on-surface-variant flex items-start group/item">
+<span class="material-symbols-outlined text-forest-deep/40 mr-4 mt-1 group-hover/item:text-forest-deep transition-colors" style="font-variation-settings: 'FILL' 0;">arrow_right_alt</span>
+<span>Diagnosed and resolved hardware-level control-flow and network packet failures between the embedded device and AWS servers, ensuring reliable end-to-end connectivity.</span>
 </li>
 </ul>
 <div class="flex md:hidden flex-wrap gap-3 mt-8">
-<span class="px-4 py-1 rounded-full border border-forest-deep/10 font-label-xs text-label-xs text-forest-deep uppercase tracking-widest bg-surface-bright/50">React</span>
-<span class="px-4 py-1 rounded-full border border-forest-deep/10 font-label-xs text-label-xs text-forest-deep uppercase tracking-widest bg-surface-bright/50">Node.js</span>
-<span class="px-4 py-1 rounded-full border border-forest-deep/10 font-label-xs text-label-xs text-forest-deep uppercase tracking-widest bg-surface-bright/50">AWS</span>
+<span class="px-4 py-1 rounded-full border border-forest-deep/10 font-label-xs text-label-xs text-forest-deep uppercase tracking-widest bg-surface-bright/50">C</span>
+<span class="px-4 py-1 rounded-full border border-forest-deep/10 font-label-xs text-label-xs text-forest-deep uppercase tracking-widest bg-surface-bright/50">FreeRTOS</span>
+<span class="px-4 py-1 rounded-full border border-forest-deep/10 font-label-xs text-label-xs text-forest-deep uppercase tracking-widest bg-surface-bright/50">MQTT</span>
+<span class="px-4 py-1 rounded-full border border-forest-deep/10 font-label-xs text-label-xs text-forest-deep uppercase tracking-widest bg-surface-bright/50">AWS IoT Core</span>
 </div>
 </div>
 </div>
 </div>
-<!-- Internship 2 -->
+
+<!-- Internship 2: Samsung -->
 <div class="relative z-10 mb-section-gap group">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-center">
 <div class="md:order-2 pl-0 md:pl-12">
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-forest-deep/60 block mb-2">Jun 2022 – Aug 2022</span>
-<h2 class="font-display-lg text-[40px] md:text-display-lg text-forest-deep leading-none mb-4">Creative <br/> Digital</h2>
-<h3 class="font-headline-sm text-headline-sm text-on-surface-variant italic mb-6">Web Development Intern</h3>
-<div class="hidden md:flex gap-3 mt-8">
-<span class="px-4 py-1 rounded-full border border-forest-deep/10 font-label-xs text-label-xs text-forest-deep uppercase tracking-widest backdrop-blur-sm bg-surface-bright/50">Vue.js</span>
-<span class="px-4 py-1 rounded-full border border-forest-deep/10 font-label-xs text-label-xs text-forest-deep uppercase tracking-widest backdrop-blur-sm bg-surface-bright/50">Tailwind CSS</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-forest-deep/60 block mb-2">Nov 2025 – Apr 2026</span>
+<div class="flex mb-4">
+<div class="inline-flex items-center justify-center h-32 md:h-44 px-6 bg-surface-container-lowest rounded-2xl border border-forest-deep/10 shadow-sm">
+<img src="Images/samsung_logo.jpg" alt="Samsung Research logo" class="h-20 md:h-28 w-auto object-contain">
+</div>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface-variant italic mb-6">Student Research Intern</h3>
+<div class="hidden md:flex flex-wrap gap-3 mt-8">
+<span class="px-4 py-1 rounded-full border border-forest-deep/10 font-label-xs text-label-xs text-forest-deep uppercase tracking-widest backdrop-blur-sm bg-surface-bright/50">Python</span>
+<span class="px-4 py-1 rounded-full border border-forest-deep/10 font-label-xs text-label-xs text-forest-deep uppercase tracking-widest backdrop-blur-sm bg-surface-bright/50">TensorFlow</span>
+<span class="px-4 py-1 rounded-full border border-forest-deep/10 font-label-xs text-label-xs text-forest-deep uppercase tracking-widest backdrop-blur-sm bg-surface-bright/50">NVIDIA Sionna</span>
+<span class="px-4 py-1 rounded-full border border-forest-deep/10 font-label-xs text-label-xs text-forest-deep uppercase tracking-widest backdrop-blur-sm bg-surface-bright/50">Machine Learning</span>
 </div>
 </div>
 <div class="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 bg-cream border-2 border-forest-deep rounded-full z-20 group-hover:bg-forest-deep transition-colors duration-500"></div>
@@ -223,33 +319,92 @@
 <ul class="space-y-6">
 <li class="font-body-md text-body-md text-on-surface-variant flex items-start md:flex-row-reverse group/item">
 <span class="material-symbols-outlined text-forest-deep/40 mr-4 md:mr-0 md:ml-4 mt-1 group-hover/item:text-forest-deep transition-colors md:rotate-180" style="font-variation-settings: 'FILL' 0;">arrow_right_alt</span>
-<span>Engineered highly responsive, pixel-perfect user interfaces for marketing campaigns, ensuring seamless experiences across diverse device ecosystems.</span>
+<span>Designed a hybrid wireless receiver combining a pretrained neural network with a classical detection algorithm, achieving a measurable performance gain over the existing baseline without retraining either model.</span>
 </li>
 <li class="font-body-md text-body-md text-on-surface-variant flex items-start md:flex-row-reverse group/item">
 <span class="material-symbols-outlined text-forest-deep/40 mr-4 md:mr-0 md:ml-4 mt-1 group-hover/item:text-forest-deep transition-colors md:rotate-180" style="font-variation-settings: 'FILL' 0;">arrow_right_alt</span>
-<span>Integrated third-party RESTful APIs to populate dynamic content, enhancing user engagement and content delivery efficiency.</span>
+<span>Derived the optimal weighting between both detection methods through statistical analysis, validating the result with strong statistical confidence across thousands of simulated test cases.</span>
+</li>
+<li class="font-body-md text-body-md text-on-surface-variant flex items-start md:flex-row-reverse group/item">
+<span class="material-symbols-outlined text-forest-deep/40 mr-4 md:mr-0 md:ml-4 mt-1 group-hover/item:text-forest-deep transition-colors md:rotate-180" style="font-variation-settings: 'FILL' 0;">arrow_right_alt</span>
+<span>Outperformed a larger, previous-generation neural network approach while using significantly fewer parameters and zero additional training time.</span>
+</li>
+<li class="font-body-md text-body-md text-on-surface-variant flex items-start md:flex-row-reverse group/item">
+<span class="material-symbols-outlined text-forest-deep/40 mr-4 md:mr-0 md:ml-4 mt-1 group-hover/item:text-forest-deep transition-colors md:rotate-180" style="font-variation-settings: 'FILL' 0;">arrow_right_alt</span>
+<span>Documented the complete methodology and results in a published IEEE conference paper.</span>
 </li>
 </ul>
 <div class="flex md:hidden flex-wrap gap-3 mt-8">
-<span class="px-4 py-1 rounded-full border border-forest-deep/10 font-label-xs text-label-xs text-forest-deep uppercase tracking-widest bg-surface-bright/50">Vue.js</span>
-<span class="px-4 py-1 rounded-full border border-forest-deep/10 font-label-xs text-label-xs text-forest-deep uppercase tracking-widest bg-surface-bright/50">Tailwind CSS</span>
+<span class="px-4 py-1 rounded-full border border-forest-deep/10 font-label-xs text-label-xs text-forest-deep uppercase tracking-widest bg-surface-bright/50">Python</span>
+<span class="px-4 py-1 rounded-full border border-forest-deep/10 font-label-xs text-label-xs text-forest-deep uppercase tracking-widest bg-surface-bright/50">TensorFlow</span>
+<span class="px-4 py-1 rounded-full border border-forest-deep/10 font-label-xs text-label-xs text-forest-deep uppercase tracking-widest bg-surface-bright/50">NVIDIA Sionna</span>
+<span class="px-4 py-1 rounded-full border border-forest-deep/10 font-label-xs text-label-xs text-forest-deep uppercase tracking-widest bg-surface-bright/50">Machine Learning</span>
 </div>
 </div>
 </div>
 </div>
+
 </section>
 </main>
+
 <!-- Footer -->
 <footer class="bg-forest-deep dark:bg-surface-container-lowest full-width bottom-0 shadow-primary/20 mt-auto">
 <div class="flex flex-col md:flex-row justify-between items-center w-full px-page-margin-mobile md:px-page-margin-desktop py-section-gap max-w-container-max mx-auto">
 <div class="font-headline-sm text-headline-sm text-cream dark:text-forest-deep mb-8 md:mb-0">
-                © 2024 Software Engineer Portfolio. Built with precision.
+                &copy; 2026 Krishna Pradeep Tambatkar
             </div>
 <nav class="flex gap-8">
-<a class="font-body-md text-body-md text-cream/70 dark:text-forest-deep/70 hover:text-primary-fixed transition-colors hover:scale-95 transition-transform duration-300" href="#">LinkedIn</a>
-<a class="font-body-md text-body-md text-cream/70 dark:text-forest-deep/70 hover:text-primary-fixed transition-colors hover:scale-95 transition-transform duration-300" href="#">GitHub</a>
-<a class="font-body-md text-body-md text-cream/70 dark:text-forest-deep/70 hover:text-primary-fixed transition-colors hover:scale-95 transition-transform duration-300" href="#">Email</a>
+<a class="font-body-md text-body-md text-cream/70 dark:text-forest-deep/70 hover:text-primary-fixed transition-colors hover:scale-95 transition-transform duration-300" href="https://www.linkedin.com/in/krishnatambatkar" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+<a class="font-body-md text-body-md text-cream/70 dark:text-forest-deep/70 hover:text-primary-fixed transition-colors hover:scale-95 transition-transform duration-300" href="https://github.com/krishh2530" target="_blank" rel="noopener noreferrer">GitHub</a>
+<a class="font-body-md text-body-md text-cream/70 dark:text-forest-deep/70 hover:text-primary-fixed transition-colors hover:scale-95 transition-transform duration-300" href="mailto:ktams2530@gmail.com">Email</a>
 </nav>
 </div>
 </footer>
+
+<script>
+  // Mobile menu logic — matches the pattern used across the rest of the site
+  let menuOpen = false;
+
+  function toggleMobileMenu() {
+    if (menuOpen) {
+      closeMobileMenu();
+    } else {
+      openMobileMenu();
+    }
+  }
+
+  function openMobileMenu() {
+    const overlay = document.getElementById('mobileMenuOverlay');
+    const sheet = document.getElementById('mobileMenuSheet');
+    const icon = document.getElementById('menuIcon');
+
+    document.body.classList.add('menu-open');
+    overlay.classList.remove('opacity-0', 'pointer-events-none');
+    sheet.classList.remove('translate-y-full');
+    sheet.style.transform = 'translateY(0)';
+
+    icon.textContent = 'close';
+    icon.style.transform = 'rotate(90deg)';
+    menuOpen = true;
+  }
+
+  function closeMobileMenu() {
+    const overlay = document.getElementById('mobileMenuOverlay');
+    const sheet = document.getElementById('mobileMenuSheet');
+    const icon = document.getElementById('menuIcon');
+
+    document.body.classList.remove('menu-open');
+    overlay.classList.add('opacity-0', 'pointer-events-none');
+    sheet.classList.add('translate-y-full');
+    sheet.style.transform = 'translateY(100%)';
+
+    icon.textContent = 'menu';
+    icon.style.transform = 'rotate(0deg)';
+    menuOpen = false;
+  }
+
+  document.querySelectorAll('#mobileMenuSheet a').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+</script>
 </body></html>
